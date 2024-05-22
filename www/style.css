@@ -1,4 +1,6 @@
-html, body, main {
+html,
+body,
+main {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -6,12 +8,11 @@ html, body, main {
 
 body {
     margin: auto;
-    max-width: 800px;
     display: flex;
     flex-direction: column;
 }
 
-@media (max-width: 800px) {
+@media {
     body {
         padding: 10px;
         box-sizing: border-box;
@@ -24,7 +25,31 @@ main {
     align-items: center;
 }
 
-#coord, #status {
+#io {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#io>div {
+    width: 50%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+#io>div>div {
+    display: flex;
+    flex-direction: row;
+}
+
+#io div canvas {
+    width: 400px;
+    height: 320px;
+}
+
+#coord,
+#status {
     color: grey;
     font-size: 10px;
     height: 15px
@@ -50,6 +75,6 @@ footer {
 }
 
 .hide {
-	visibility: hidden;
-	height: 0px;
+    visibility: hidden;
+    height: 0px;
 }

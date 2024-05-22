@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+
+<head>
 	<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Plotters WebAssembly Demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DDSketch Visualizer</title>
 	<link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
-        <script src="./bootstrap.js"></script>
+</head>
+
+<body>
+	<noscript>This page contains webassembly and javascript content, please enable javascript in your
+		browser.</noscript>
+	<script src="./bootstrap.js"></script>
 	<main>
-	    <h1>Plotters WebAssembly Demo</h1>
-	    <div id="coord"></div>
-        <canvas id="canvas" width="600" height="400"></canvas>
-	    <div id="status">Loading WebAssembly...</div>
-	    <div id="control">
-			<label for="plot-type">Demo: </label>
-			<select id="plot-type">
-				<option value="0">Graph of y=1</option>
-				<option value="1">Graph of y=x</option>
-				<option value="2">Graph of y=x^2</option>
-				<option value="3">Graph of y=x^3</option>
-				<option value="4">Graph of y=x^4</option>
-				<option value="5">Graph of y=x^5</option>
-				<option value="mandelbrot">Mandelbrot Set</option>
-				<option value="3d-plot">3D Plot Demo</option>
-			</select>
-			<div id="3d-control" class="hide">
-				<label for="pitch">Pitch: </label> <input type="range" min="0" max="157" id="pitch" value="10"> <br/>
-				<label for="yaw">Yaw: </label> <input type="range" min="0" max="314" id="yaw" value="50">
+		<h1>DDSketch Visualizer</h1>
+		<div id="coord"></div>
+		<div id="io">
+			<div>
+				<h2>Input values</h2>
+				<canvas id="input_canvas"></canvas>
+				<div>
+					<label for="input_bin_size">Visualization bin count: </label>
+					<input type="range" min="1" max="1024" id="input_bin_size" value="512">
+					<label for="input_bin_size" id="bin_count_label">0</label>
+				</div>
+				<div id="addctl">
+					<label for="add_count">Add points:</label>
+					<input type="range" min="1" max="1000" id="add_count" value="10">
+					<input type="button" id="add_btn" value="Add">
+				</div>
+				<div id="input_stats"></div>
 			</div>
-	    </div>
+			<div>
+				<h2>Output DDSketch</h2>
+				<canvas id="output_canvas"></canvas>
+				<div id="output_stats"></div>
+
+				<h3>DDSketch Config</h3>
+				<div>
+					<label for="bin_limit">Bin limit: </label>
+					<input type="range" min="1" max="4096" id="sketch_bin_limit" value="4096">
+					<label for="sketch_bin_limit" id="sketch_bin_limit_label">0</label>
+				</div>
+			</div>
+		</div>
+		<div id="status">Loading WebAssembly...</div>
 	</main>
 	<footer>
-	    <a href="https://github.com/plotters-rs/plotters-wasm-demo" target="a">Source</a> |
-	    <a href="https://github.com/plotters-rs/plotters" target="a">Repo</a> |
-	    <a href="https://crates.io/crates/plotters" target="a">Crates</a> |
-	    <a href="https://docs.rs/plotters" target="a">Docs</a>
+		<a href="https://github.com/plotters-rs/plotters-wasm-demo" target="a">Source</a> |
+		<a href="https://github.com/plotters-rs/plotters" target="a">Repo</a> |
+		<a href="https://crates.io/crates/plotters" target="a">Crates</a> |
+		<a href="https://docs.rs/plotters" target="a">Docs</a>
 	</footer>
-    </body>
+</body>
+
 </html>

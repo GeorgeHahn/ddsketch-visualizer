@@ -1,18 +1,26 @@
 [package]
 name = "wasm-demo"
 version = "0.1.0"
-authors = ["Hao Hou <haohou302@gmail.com>"]
-edition = "2018"
+authors = ["George Hahn <george.hahn@datadoghq.com>"]
+edition = "2021"
 
 [lib]
 crate-type=["cdylib"]
 
 [dependencies]
-plotters = "^0.3.2"
-wasm-bindgen = "0.2.78"
-wee_alloc = "0.4.5"
-web-sys = { version = "0.3.39", features = ["HtmlCanvasElement"] }
-plotters-canvas = "^0.3.0"
+console_error_panic_hook = "0.1"
+ddsketch-agent = { git = "https://github.com/DataDog/saluki/", branch = "georgehahn/open-bins" }
+getrandom = { version = "0.2", features = ["js"] }
+plotters = "0.3"
+plotters-canvas = "0.3"
+rand = { version = "0.8", default-features = false, features = ["std"] }
+rand_distr = { version = "0.4", default-features = false }
+rand_xorshift = { version = "0.3", default-features = false }
+wasm-bindgen = { version = "0.2", default-features = false }
+web-sys = { version = "0.3" }
+wee_alloc = "0.4"
 
 [profile.release]
 lto = true
+opt-level = "z"
+panic = "abort"
