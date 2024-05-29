@@ -22,11 +22,11 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
+      - name: Build with wasm-pack
+        run: wasm-pack build --release --target web
       - name: npm install
         working-directory: ./www
         run: npm install
-      - name: Build with wasm-pack
-        run: wasm-pack build --release --target web
       - name: npm build
         working-directory: ./www
         run: npm run build
