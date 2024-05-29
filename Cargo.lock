@@ -243,7 +243,7 @@ dependencies = [
 [[package]]
 name = "datadog-protos"
 version = "0.1.0"
-source = "git+https://github.com/DataDog/saluki/?branch=georgehahn/open-bins#6041c009fdc50f0871514581626db8259436925f"
+source = "git+https://github.com/DataDog/saluki/?branch=georgehahn/open-bins#726fdada2bbf7eb001b3f3524b1e1a0bffbbfd74"
 dependencies = [
  "bytes",
  "prost",
@@ -256,7 +256,7 @@ dependencies = [
 [[package]]
 name = "ddsketch-agent"
 version = "0.1.0"
-source = "git+https://github.com/DataDog/saluki/?branch=georgehahn/open-bins#6041c009fdc50f0871514581626db8259436925f"
+source = "git+https://github.com/DataDog/saluki/?branch=georgehahn/open-bins#726fdada2bbf7eb001b3f3524b1e1a0bffbbfd74"
 dependencies = [
  "datadog-protos",
  "float_eq",
@@ -1139,9 +1139,9 @@ checksum = "d66dc143e6b11c1eddc06d5c423cfc97062865baf299914ab64caa38182078fe"
 
 [[package]]
 name = "syn"
-version = "2.0.65"
+version = "2.0.66"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d2863d96a84c6439701d7a38f9de935ec562c8832cc55d1dde0f513b52fad106"
+checksum = "c42f3f41a2de00b01c0aaad383c5a45241efc8b2d1eda5661812fda5f3cdcff5"
 dependencies = [
  "proc-macro2",
  "quote",

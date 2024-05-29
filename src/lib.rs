@@ -115,7 +115,6 @@ impl SketchView {
             .map_err(|err| err.to_string())?)
     }
 
-    // impl Fn((i32, i32)) -> Option<(f64, f64)>
     fn inner_input_chart(&mut self, bin_count: u32) -> Result<(), Box<dyn std::error::Error>> {
         // Arrange values into `bin_count` buckets
         let min_value = self.sketch.min().unwrap_or_default();
@@ -128,6 +127,8 @@ impl SketchView {
             let count = grouped_values.entry(key).or_insert(0u32);
             *count += 1;
         }
+
+        // todo: share the same min & max for both charts
 
         let min_value = grouped_values.keys().min().copied().unwrap_or_default() as f64 * bin_width;
         let max_value = grouped_values.keys().max().copied().unwrap_or_default() as f64 * bin_width;

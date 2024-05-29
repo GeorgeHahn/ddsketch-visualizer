@@ -24,3 +24,6 @@ wee_alloc = "0.4"
 lto = true
 opt-level = "z"
 panic = "abort"
+
+# [patch."https://github.com/DataDog/saluki/"]
+# ddsketch-agent = { path = "../saluki/lib/ddsketch-agent" }
