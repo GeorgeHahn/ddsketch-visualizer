@@ -24,7 +24,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: '10'
+          node-version: '22'
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
